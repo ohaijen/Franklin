@@ -1,0 +1,53 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+# Install the MySQL driver:
+#   gem install mysql
+# On Mac OS X:
+#   sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql
+# On Mac OS X Leopard:
+#   sudo env ARCHFLAGS="-arch i386" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+#       This sets the ARCHFLAGS environment variable to your native architecture
+# On Windows:
+#   gem install mysql
+#       Choose the win32 build.
+#       Install MySQL and put its /bin directory on your path.
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+
+<% db_driver = RUBY_PLATFORM == "java" ? "jdbcmysql" : "mysql" %>
+
+development: &development
+  adapter: <%= db_driver %>
+  encoding: utf8
+  database: franklin_<%= ENV['DB_SCHEMA'] || "" %>development
+  username: root
+  password:
+  host: localhost
+  pool: 10
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  adapter: <%= db_driver %>
+  encoding: utf8
+  database: franklin_<%= ENV['DB_SCHEMA'] || "" %>test
+  username: root
+  password:
+  host: localhost
+  pool: 20
+
+test_server: *test
+
+# Important note: this database conf is NOT the actual production database
+# conf, which is managed separately.  This exists for the purpose of allowing
+# tests to spoof the production environment while in the development environment.
+# the rails production env won't load successfully in dev without it.
+production:
+  adapter: <%= db_driver %>
+  encoding: utf8
+  database: franklin_production
+  username: root
+  password: mspsr072Q
+  host: localhost
