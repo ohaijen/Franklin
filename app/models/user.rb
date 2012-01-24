@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   
+  validates_uniqueness_of :email
   has_many :user_virtues
   has_many :results, :through => :user_virtues
   

@@ -21,7 +21,7 @@
         %h1 Welcome to Franklin (beta)
         = link_to "read more about Franklin", :controller => 'information', :action => 'index'
         %h2{:style => "margin-top: 20px"}
-          You are logged in as #{current_user.name}
+          You are logged in as #{current_user.email}
         .quicknav
           = link_to "your results", :controller => 'results', :action => 'index'
           = link_to "your virtues", :controller => 'user_virtues', :action => 'index'
@@ -32,9 +32,12 @@
       .franklin{:style => 'float:left; display: inline-block'}
         = image_tag('franklin.jpg', :size => "116x148")
       .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
-        %h1 Welcome to Franklin
+        %h1 Welcome to Franklin (beta)
         = link_to "read more about Franklin", :controller => 'information', :action => 'index'
+        %h2{:style => "margin-top: 20px"}
         .quicknav
+          = link_to "login", :controller => "session", :action => "login"
+          = link_to "create new user", :controller => :users, :action => "new"
         
   .clearfix{:style => 'clear:both'}
 

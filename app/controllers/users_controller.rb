@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #validate_uniqueness_of :email
   
   skip_before_filter :authorize, :only => [:new, :create]
   def show
@@ -11,11 +12,13 @@ class UsersController < ApplicationController
 
   def create
     salt = Digest::SHA1.hexdigest(Time.now.to_s)
-    @user = User.create! :name => params[:user][:name], :email => params[:user][:email], :password => User.encrypted_password(params[:user][:password], salt), :salt => salt
-    if @user
-      session[:user_id] = @user.id
+    if params[:user][:password] == params[:password_confirmation] && params[:secret_passcode].downcase == "batman"
+      @user = User.create! :email => params[:user][:email].downcase, :password => User.encrypted_password(params[:user][:password], salt), :salt => salt
+      if @user
+        session[:user_id] = @user.id
+      end
+      redirect_to :controller => :user_virtues, :action => :index
     end
-    redirect_to :controller => :user_virtues, :action => :index
   end
   
 end

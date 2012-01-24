@@ -6,16 +6,18 @@
 - form_for @user do |f|
 
   .width_40
-    = f.label :name
-  = f.text_field :name
-  %br
-  .width_40
     = f.label :email
   = f.text_field :email
   %br
   .width_40
     = f.label :password
   = f.password_field :password
+  .width_40
+    = label_tag :password_confirmation
+  = text_field_tag :password_confirmation, nil, :style => "width: 175px"
+  .width_40
+    = label_tag :secret_passcode
+  = text_field_tag :secret_passcode, nil, :style => "width: 175px"
 
   %br
   = f.submit "create user!"

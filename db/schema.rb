@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122080700) do
+ActiveRecord::Schema.define(:version => 20120124204124) do
 
   create_table "results", :force => true do |t|
     t.integer  "user_virtue_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20120122080700) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "name"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
