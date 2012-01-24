@@ -45,9 +45,10 @@ test_server: *test
 # tests to spoof the production environment while in the development environment.
 # the rails production env won't load successfully in dev without it.
 production:
-  adapter: <%= db_driver %>
+  # Servers: local
+  adapter: postgresql
   encoding: utf8
   database: franklin_production
+
   username: root
-  password: mspsr072Q
-  host: localhost
+  password:
