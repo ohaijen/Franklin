@@ -1,0 +1,10 @@
+- form_for @user_virtue  do |f|
+  .width_40
+    = f.label :name
+  = f.text_field :name
+  .width_40
+    = f.label :description
+  = f.text_area :description
+  .width_40
+    = f.submit
+
