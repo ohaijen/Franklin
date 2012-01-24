@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110905043503) do
+ActiveRecord::Schema.define(:version => 20120122080700) do
+
+  create_table "results", :force => true do |t|
+    t.integer  "user_virtue_id"
+    t.date     "date"
+    t.boolean  "success"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_virtues", :force => true do |t|
     t.integer "user_id"
@@ -24,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20110905043503) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "salt"
   end
 
   create_table "virtues", :force => true do |t|
