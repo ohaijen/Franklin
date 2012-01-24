@@ -68,32 +68,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
-  font-family: Certege;
-  src: url(../junction.ttf);
-}
-
-@font-face {
   font-family: Pierce;
   src: url(../PierceRoman.otf);
 }
 
-/* line 15, ../../app/stylesheets/screen.sass */
+/* line 14, ../../app/stylesheets/screen.sass */
 body {
   background-color: #c68737;
   color: #7f3611;
   font-family: Pierce, Helvetica;
 }
 
-/* line 20, ../../app/stylesheets/screen.sass */
+/* line 19, ../../app/stylesheets/screen.sass */
 .everything {
   background-color: #f2c387;
   width: 1200px;
   margin-left: 20px;
   padding: 20px;
-  font-family: Pierce, Helvetica;
 }
 
-/* line 29, ../../app/stylesheets/screen.sass */
+/* line 27, ../../app/stylesheets/screen.sass */
 .header {
   background-color: #f2c387;
   padding-bottom: 13px;
@@ -102,7 +96,11 @@ body {
   margin-left: 20px;
   width: 1200px;
   padding: 20px;
-  font-family: Pierce;
+}
+
+/* line 36, ../../app/stylesheets/screen.sass */
+.footer {
+  margin: 20px;
 }
 
 /* line 39, ../../app/stylesheets/screen.sass */
@@ -143,7 +141,7 @@ a {
 
 /* line 62, ../../app/stylesheets/screen.sass */
 table {
-  margin: 5px;
+  margin-top: 5px;
 }
 /* line 64, ../../app/stylesheets/screen.sass */
 table tr, table td {
