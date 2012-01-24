@@ -1,0 +1,29 @@
+.explanation
+  Showing the results of #{(@start_date - 6.days).strftime('%m-%d')} - #{@start_date.strftime('%m-%d')}.
+  =link_to "older results", :action => :index, :start_date => @start_date - 7.days
+  - if @start_date != Date.today
+    =link_to "newer results", :action => :index, :start_date => [@start_date + 7.days, Date.today].min
+%table
+  %tr
+    %td
+    - (0..6).each do |i|
+      - date = @start_date - (6-i).days
+      %td= date.strftime('%m-%d')
+  - current_user.user_virtues.each do |v|
+    %tr
+      %td= popup v.name, v.description
+      - (0..6).each do |i|
+        - date = @start_date - (6-i).days
+        - result =  @results.detect{|res| res.date.day == date.day && res.user_virtue == v}
+        - if result
+          %td= result.success ? "" : "failure"
+        - else
+          %td 
+            .c1{:style => "float:left"}
+              = button_to "s", {:controller => :results, :action => :create, :method => :post,  |
+                :result => {:success => true, :user_virtue_id => v.id, :date => date}}  |
+            .c1{:style => "float:left"}
+              = button_to "f", {:controller => :results, :action => :create, :method => :post,  |
+                :result => {:success => false, :user_virtue_id => v.id, :date => date}} |
+
+

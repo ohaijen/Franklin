@@ -1,0 +1,177 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../.rvm/gems/ruby-1.9.1-p378/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: Certege;
+  src: url(../junction.ttf);
+}
+
+@font-face {
+  font-family: Pierce;
+  src: url(../PierceRoman.otf);
+}
+
+/* line 15, ../../app/stylesheets/screen.sass */
+body {
+  background-color: #c68737;
+  color: #7f3611;
+  font-family: Pierce, Helvetica;
+}
+
+/* line 20, ../../app/stylesheets/screen.sass */
+.everything {
+  background-color: #f2c387;
+  width: 1200px;
+  margin-left: 20px;
+  padding: 20px;
+  font-family: Pierce, Helvetica;
+}
+
+/* line 29, ../../app/stylesheets/screen.sass */
+.header {
+  background-color: #f2c387;
+  padding-bottom: 13px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 1200px;
+  padding: 20px;
+  font-family: Pierce;
+}
+
+/* line 39, ../../app/stylesheets/screen.sass */
+p {
+  margin-top: 10px;
+}
+
+/* line 41, ../../app/stylesheets/screen.sass */
+a {
+  color: #c66737;
+}
+
+/* line 44, ../../app/stylesheets/screen.sass */
+.quote {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+/* line 48, ../../app/stylesheets/screen.sass */
+.popup {
+  background-color: #c68737;
+  padding: 10px;
+  border: 1px black solid;
+}
+
+/* line 53, ../../app/stylesheets/screen.sass */
+.explanation {
+  border: 1px black;
+  border-style: solid;
+  padding: 3px;
+  margin-bottom: 15px;
+}
+
+/* line 59, ../../app/stylesheets/screen.sass */
+.width_40 {
+  width: 400;
+}
+
+/* line 62, ../../app/stylesheets/screen.sass */
+table {
+  margin: 5px;
+}
+/* line 64, ../../app/stylesheets/screen.sass */
+table tr, table td {
+  border: 1px black solid;
+  padding: 3px;
+}
+
+/* line 69, ../../app/stylesheets/screen.sass */
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 75, ../../app/stylesheets/screen.sass */
+h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 80, ../../app/stylesheets/screen.sass */
+h3 {
+  font-size: 12px;
+}
+
+/* line 83, ../../app/stylesheets/screen.sass */
+h4 {
+  font-size: 10px;
+}

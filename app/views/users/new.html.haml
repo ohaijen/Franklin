@@ -1,0 +1,21 @@
+.explanation
+  Enter your email and create a password. Franklin will never email you anything unless you request it.
+  %br
+  Actually right now Franklin has no ability to email you at all.
+
+- form_for @user do |f|
+
+  .width_40
+    = f.label :name
+  = f.text_field :name
+  %br
+  .width_40
+    = f.label :email
+  = f.text_field :email
+  %br
+  .width_40
+    = f.label :password
+  = f.password_field :password
+
+  %br
+  = f.submit "create user!"

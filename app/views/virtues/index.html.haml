@@ -1,0 +1,15 @@
+%h1 Virtues
+
+.explanation
+  Benjamin Franklin created these virtues for himself and tracked them daily for two decades of his life.
+  Pick any or all of them to add them to your list of virtues.
+.list
+  - form_tag "/user_virtues/add_selected_virtues" do
+    %ul
+      - @virtues.each do |virtue|
+        %li
+          = check_box_tag virtue.name
+          = virtue.name
+          = ": "
+          = virtue.description
+    = submit_tag "create virtues!"

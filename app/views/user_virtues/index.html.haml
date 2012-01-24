@@ -1,0 +1,16 @@
+%h1 Your Virtues
+
+.explanation
+  These are your virtues. Track them daily! Go to the 
+  = link_to "results", results_path
+  page to mark your successes and failures and to see your record.
+.list
+  %ul
+    - @user_virtues.each do |virtue|
+      %li
+        = virtue.name
+        = ": "
+        = virtue.description
+        = link_to '<b>(x)</b>', user_virtue_path(virtue.id), :method => :delete
+= link_to "New Virtue", :conroller => :user_virtues, :action => :new
+= link_to "Add standard virtues!", :controller => :virtues, :action => :index

@@ -1,0 +1,39 @@
+%head
+  = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+  = stylesheet_link_tag 'print.css', :media => 'print'
+  /[if IE]
+    = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+%body
+  = javascript_include_tag 'jquery'
+  = javascript_include_tag 'application'
+
+  - if session[:user_id]
+    .header{:style => 'height: 150'}
+      .franklin{:style => 'float:left; display: inline-block'}
+        = image_tag('franklin.jpg', :size => "116x148")
+      .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
+        %h1 Welcome to Franklin
+        = link_to "read more about Franklin", :controller => 'information', :action => 'index'
+        %h2{:style => "margin-top: 20px"}
+          You are logged in as #{current_user.name}
+        .quicknav
+          = link_to "your results", :controller => 'results', :action => 'index'
+          = link_to "your virtues", :controller => 'user_virtues', :action => 'index'
+          = link_to "logout", :controller => 'session', :action => 'logout'
+
+  - else
+    .header{:style => 'height: 150'}
+      .franklin{:style => 'float:left; display: inline-block'}
+        = image_tag('franklin.jpg', :size => "116x148")
+      .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
+        %h1 Welcome to Franklin
+        = link_to "read more about Franklin", :controller => 'information', :action => 'index'
+        .quicknav
+        
+  .clearfix{:style => 'clear:both'}
+
+  .everything
+    = yield
+
+  .footer
+    Created by Jen Bisignani
