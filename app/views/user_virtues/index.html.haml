@@ -11,6 +11,9 @@
         = virtue.name
         = ": "
         = virtue.description
-        = link_to '<b>(x)</b>', user_virtue_path(virtue.id), :method => :delete
+        (
+        = link_to '<b>remove</b>', user_virtue_path(virtue.id), :method => :delete
+        = link_to '<b>edit</b>', edit_user_virtue_path(virtue.id)
+        )
 = link_to "New Virtue", :conroller => :user_virtues, :action => :new
 = link_to "Add standard virtues!", :controller => :virtues, :action => :index

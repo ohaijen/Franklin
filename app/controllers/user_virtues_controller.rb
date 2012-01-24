@@ -15,6 +15,16 @@ class UserVirtuesController < ApplicationController
     redirect_to :action => :index
   end
 
+  def edit
+    @user_virtue = UserVirtue.find(params[:id])
+  end
+
+  def update
+    @user_virtue = UserVirtue.find(params[:id])
+    @user_virtue.update_attributes!(:name => params[:user_virtue][:name], :description => params[:user_virtue][:description])
+    redirect_to :action => :index
+  end
+
   def destroy
     @user_virtue = UserVirtue.find(params[:id])
     @user_virtue.destroy
