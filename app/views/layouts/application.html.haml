@@ -16,29 +16,31 @@
   - if session[:user_id]
     .header{:style => 'height: 150'}
       .franklin{:style => 'float:left; display: inline-block'}
-        = image_tag('franklin.jpg', :size => "116x148")
+        = link_to image_tag('franklin.jpg', :size => "116x148"), results_path
       .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
         %h1 Welcome to Benjamin Franklin's Method (beta)
-        = link_to "read more about Franklin's Method", :controller => 'information', :action => 'index'
+        = link_to "Read more about Franklin's Method", :controller => 'information', :action => 'index'
         %h2{:style => "margin-top: 20px"}
-          You are logged in as #{current_user.email} and this week you're working on
-          = virtue_of_the_week.name
+          You are logged in as #{current_user.email} 
+          - if virtue_of_the_week
+            and this week you're working on
+            = link_to virtue_of_the_week.name, results_path
         .quicknav
-          = link_to "your results", :controller => 'results', :action => 'index'
-          = link_to "your virtues", :controller => 'user_virtues', :action => 'index'
-          = link_to "logout", :controller => 'session', :action => 'logout'
+          = link_to "Track your results", :controller => 'results', :action => 'index'
+          = link_to "Modify your virtues", :controller => 'user_virtues', :action => 'index'
+          = link_to "Logout", :controller => 'session', :action => 'logout'
 
   - else
     .header{:style => 'height: 150'}
       .franklin{:style => 'float:left; display: inline-block'}
-        = image_tag('franklin.jpg', :size => "116x148")
+        = link_to image_tag('franklin.jpg', :size => "116x148"), "/login"
       .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
         %h1 Welcome to Benjamin Franklin's Method (beta)
         = link_to "read more about Franklin's Method", :controller => 'information', :action => 'index'
         %h2{:style => "margin-top: 20px"}
         .quicknav
-          = link_to "login", :controller => "session", :action => "login"
-          = link_to "create new user", :controller => :users, :action => "new"
+          = link_to "Login", :controller => "session", :action => "login"
+          = link_to "Create new user", :controller => :users, :action => "new"
         
   .clearfix{:style => 'clear:both'}
 

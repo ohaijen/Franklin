@@ -3,6 +3,13 @@
   =link_to "older results", :action => :index, :start_date => @start_date - 7.days
   - if @start_date != Date.today
     =link_to "newer results", :action => :index, :start_date => [@start_date + 7.days, Date.today].min
+
+- if virtue_of_the_week
+  %h2{:style => "margin-bottom: 5px"}
+    Virtue of the week: 
+    = virtue_of_the_week.name
+  .description{:style => "margin-bottom: 10px; margin-top: 0px"}
+    = virtue_of_the_week.description
 %table
   %tr
     %td
@@ -16,7 +23,7 @@
         - date = @start_date - (6-i).days
         - result =  @results.detect{|res| res.date.day == date.day && res.user_virtue == v}
         - if result
-          %td= result.success ? "" : "failure"
+          %td= result.success ? "" : "✘"
         - else
           %td 
             .c1{:style => "float:left"}

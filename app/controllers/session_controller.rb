@@ -7,7 +7,7 @@ class SessionController < ApplicationController
       if user
         session[:user_id] = user.id
         logger.info("logged in as #{user.email}")
-        redirect_to(:controller => "user_virtues", :action => "index")
+        redirect_to(:controller => "results", :action => "index")
       else
         #it would be really great if it said that login failed
         flash[:notice] = "Login Failed"

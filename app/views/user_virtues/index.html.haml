@@ -1,9 +1,9 @@
 %h1 Your Virtues
 
 .explanation
-  These are your virtues. Track them daily! Go to the 
+  These are your virtues. You can track them on the
   = link_to "results", results_path
-  page to mark your successes and failures and to see your record.
+  page. You can edit your virtues from this page; however, it's best not to do that too often.
 .list
   %ul
     - @user_virtues.each do |virtue|
@@ -15,5 +15,6 @@
         = link_to '<b>remove</b>', user_virtue_path(virtue.id), :method => :delete
         = link_to '<b>edit</b>', edit_user_virtue_path(virtue.id)
         )
-= link_to "New Virtue", :conroller => :user_virtues, :action => :new
-= link_to "Add standard virtues!", :controller => :virtues, :action => :index
+.spacer{:style => "height: 20px"}
+= link_to "Ben Franklin's virtues", :controller => :virtues, :action => :index
+= link_to "Add your own virtue", :conroller => :user_virtues, :action => :new
