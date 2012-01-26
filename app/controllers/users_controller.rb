@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       if @user
         session[:user_id] = @user.id
       end
-      redirect_to :controller => :user_virtues, :action => :index
+      redirect_to :controller => :virtues, :action => :index
     end
   end
   

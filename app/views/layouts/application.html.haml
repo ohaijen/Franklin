@@ -18,10 +18,11 @@
       .franklin{:style => 'float:left; display: inline-block'}
         = image_tag('franklin.jpg', :size => "116x148")
       .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
-        %h1 Welcome to Franklin (beta)
-        = link_to "read more about Franklin", :controller => 'information', :action => 'index'
+        %h1 Welcome to Benjamin Franklin's Method (beta)
+        = link_to "read more about Franklin's Method", :controller => 'information', :action => 'index'
         %h2{:style => "margin-top: 20px"}
-          You are logged in as #{current_user.email}
+          You are logged in as #{current_user.email} and this week you're working on
+          = virtue_of_the_week.name
         .quicknav
           = link_to "your results", :controller => 'results', :action => 'index'
           = link_to "your virtues", :controller => 'user_virtues', :action => 'index'
@@ -32,8 +33,8 @@
       .franklin{:style => 'float:left; display: inline-block'}
         = image_tag('franklin.jpg', :size => "116x148")
       .welcome{:style => 'float:left; display: inline-block; margin-left: 20px'}
-        %h1 Welcome to Franklin (beta)
-        = link_to "read more about Franklin", :controller => 'information', :action => 'index'
+        %h1 Welcome to Benjamin Franklin's Method (beta)
+        = link_to "read more about Franklin's Method", :controller => 'information', :action => 'index'
         %h2{:style => "margin-top: 20px"}
         .quicknav
           = link_to "login", :controller => "session", :action => "login"
